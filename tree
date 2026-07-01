@@ -1,0 +1,740 @@
+.
+├── AGENTS.md
+├── backup
+│   └── GEMINI.md
+├── composer.json
+├── composer.lock
+├── config
+│   └── config.php
+├── db
+│   └── schema.sql
+├── public
+│   ├── assets
+│   │   ├── css
+│   │   │   └── style.css
+│   │   └── js
+│   │       └── app.js
+│   ├── index.php
+│   └── pdf.php
+├── src
+│   ├── Analyzer
+│   │   ├── CompanyAnalyzer.php
+│   │   ├── InfrastructureAnalyzer.php
+│   │   └── LeakAnalyzer.php
+│   ├── Database.php
+│   ├── ReportGenerator.php
+│   ├── Security.php
+│   └── SessionManager.php
+├── tree
+└── vendor
+    ├── autoload.php
+    ├── composer
+    │   ├── ClassLoader.php
+    │   ├── InstalledVersions.php
+    │   ├── LICENSE
+    │   ├── autoload_classmap.php
+    │   ├── autoload_files.php
+    │   ├── autoload_namespaces.php
+    │   ├── autoload_psr4.php
+    │   ├── autoload_real.php
+    │   ├── autoload_static.php
+    │   ├── installed.json
+    │   ├── installed.php
+    │   └── platform_check.php
+    ├── dompdf
+    │   ├── dompdf
+    │   │   ├── AUTHORS.md
+    │   │   ├── LICENSE.LGPL
+    │   │   ├── README.md
+    │   │   ├── VERSION
+    │   │   ├── composer.json
+    │   │   ├── lib
+    │   │   │   ├── Cpdf.php
+    │   │   │   ├── fonts
+    │   │   │   │   ├── Courier-Bold.afm
+    │   │   │   │   ├── Courier-BoldOblique.afm
+    │   │   │   │   ├── Courier-Oblique.afm
+    │   │   │   │   ├── Courier.afm
+    │   │   │   │   ├── DejaVuSans-Bold.ttf
+    │   │   │   │   ├── DejaVuSans-Bold.ufm
+    │   │   │   │   ├── DejaVuSans-BoldOblique.ttf
+    │   │   │   │   ├── DejaVuSans-BoldOblique.ufm
+    │   │   │   │   ├── DejaVuSans-Oblique.ttf
+    │   │   │   │   ├── DejaVuSans-Oblique.ufm
+    │   │   │   │   ├── DejaVuSans.ttf
+    │   │   │   │   ├── DejaVuSans.ufm
+    │   │   │   │   ├── DejaVuSansMono-Bold.ttf
+    │   │   │   │   ├── DejaVuSansMono-Bold.ufm
+    │   │   │   │   ├── DejaVuSansMono-BoldOblique.ttf
+    │   │   │   │   ├── DejaVuSansMono-BoldOblique.ufm
+    │   │   │   │   ├── DejaVuSansMono-Oblique.ttf
+    │   │   │   │   ├── DejaVuSansMono-Oblique.ufm
+    │   │   │   │   ├── DejaVuSansMono.ttf
+    │   │   │   │   ├── DejaVuSansMono.ufm
+    │   │   │   │   ├── DejaVuSerif-Bold.ttf
+    │   │   │   │   ├── DejaVuSerif-Bold.ufm
+    │   │   │   │   ├── DejaVuSerif-BoldItalic.ttf
+    │   │   │   │   ├── DejaVuSerif-BoldItalic.ufm
+    │   │   │   │   ├── DejaVuSerif-Italic.ttf
+    │   │   │   │   ├── DejaVuSerif-Italic.ufm
+    │   │   │   │   ├── DejaVuSerif.ttf
+    │   │   │   │   ├── DejaVuSerif.ufm
+    │   │   │   │   ├── Helvetica-Bold.afm
+    │   │   │   │   ├── Helvetica-BoldOblique.afm
+    │   │   │   │   ├── Helvetica-Oblique.afm
+    │   │   │   │   ├── Helvetica.afm
+    │   │   │   │   ├── Symbol.afm
+    │   │   │   │   ├── Times-Bold.afm
+    │   │   │   │   ├── Times-BoldItalic.afm
+    │   │   │   │   ├── Times-Italic.afm
+    │   │   │   │   ├── Times-Roman.afm
+    │   │   │   │   ├── ZapfDingbats.afm
+    │   │   │   │   ├── installed-fonts.dist.json
+    │   │   │   │   └── mustRead.html
+    │   │   │   └── res
+    │   │   │       ├── broken_image.png
+    │   │   │       ├── broken_image.svg
+    │   │   │       ├── html.css
+    │   │   │       ├── sRGB2014.icc
+    │   │   │       └── sRGB2014.icc.LICENSE
+    │   │   ├── phpunit.xml
+    │   │   └── src
+    │   │       ├── Adapter
+    │   │       │   ├── CPDF.php
+    │   │       │   ├── GD.php
+    │   │       │   └── PDFLib.php
+    │   │       ├── Canvas.php
+    │   │       ├── CanvasFactory.php
+    │   │       ├── Cellmap.php
+    │   │       ├── Css
+    │   │       │   ├── AttributeTranslator.php
+    │   │       │   ├── Color.php
+    │   │       │   ├── Content
+    │   │       │   │   ├── Attr.php
+    │   │       │   │   ├── CloseQuote.php
+    │   │       │   │   ├── ContentPart.php
+    │   │       │   │   ├── Counter.php
+    │   │       │   │   ├── Counters.php
+    │   │       │   │   ├── NoCloseQuote.php
+    │   │       │   │   ├── NoOpenQuote.php
+    │   │       │   │   ├── OpenQuote.php
+    │   │       │   │   ├── StringPart.php
+    │   │       │   │   └── Url.php
+    │   │       │   ├── Style.php
+    │   │       │   └── Stylesheet.php
+    │   │       ├── Dompdf.php
+    │   │       ├── Exception
+    │   │       │   └── ImageException.php
+    │   │       ├── Exception.php
+    │   │       ├── FontMetrics.php
+    │   │       ├── Frame
+    │   │       │   ├── Factory.php
+    │   │       │   ├── FrameListIterator.php
+    │   │       │   ├── FrameTree.php
+    │   │       │   └── FrameTreeIterator.php
+    │   │       ├── Frame.php
+    │   │       ├── FrameDecorator
+    │   │       │   ├── AbstractFrameDecorator.php
+    │   │       │   ├── Block.php
+    │   │       │   ├── Image.php
+    │   │       │   ├── Inline.php
+    │   │       │   ├── ListBullet.php
+    │   │       │   ├── ListBulletImage.php
+    │   │       │   ├── NullFrameDecorator.php
+    │   │       │   ├── Page.php
+    │   │       │   ├── Table.php
+    │   │       │   ├── TableCell.php
+    │   │       │   ├── TableRow.php
+    │   │       │   ├── TableRowGroup.php
+    │   │       │   └── Text.php
+    │   │       ├── FrameReflower
+    │   │       │   ├── AbstractFrameReflower.php
+    │   │       │   ├── Block.php
+    │   │       │   ├── Image.php
+    │   │       │   ├── Inline.php
+    │   │       │   ├── ListBullet.php
+    │   │       │   ├── NullFrameReflower.php
+    │   │       │   ├── Page.php
+    │   │       │   ├── Table.php
+    │   │       │   ├── TableCell.php
+    │   │       │   ├── TableRow.php
+    │   │       │   ├── TableRowGroup.php
+    │   │       │   └── Text.php
+    │   │       ├── Helpers.php
+    │   │       ├── Image
+    │   │       │   └── Cache.php
+    │   │       ├── JavascriptEmbedder.php
+    │   │       ├── LineBox.php
+    │   │       ├── Options.php
+    │   │       ├── PhpEvaluator.php
+    │   │       ├── Positioner
+    │   │       │   ├── Absolute.php
+    │   │       │   ├── AbstractPositioner.php
+    │   │       │   ├── Block.php
+    │   │       │   ├── Fixed.php
+    │   │       │   ├── Inline.php
+    │   │       │   ├── ListBullet.php
+    │   │       │   ├── NullPositioner.php
+    │   │       │   ├── TableCell.php
+    │   │       │   └── TableRow.php
+    │   │       ├── Renderer
+    │   │       │   ├── AbstractRenderer.php
+    │   │       │   ├── Block.php
+    │   │       │   ├── Image.php
+    │   │       │   ├── Inline.php
+    │   │       │   ├── ListBullet.php
+    │   │       │   ├── TableCell.php
+    │   │       │   ├── TableRow.php
+    │   │       │   ├── TableRowGroup.php
+    │   │       │   └── Text.php
+    │   │       └── Renderer.php
+    │   ├── php-font-lib
+    │   │   ├── LICENSE
+    │   │   ├── README.md
+    │   │   ├── composer.json
+    │   │   ├── maps
+    │   │   │   ├── adobe-standard-encoding.map
+    │   │   │   ├── cp1250.map
+    │   │   │   ├── cp1251.map
+    │   │   │   ├── cp1252.map
+    │   │   │   ├── cp1253.map
+    │   │   │   ├── cp1254.map
+    │   │   │   ├── cp1255.map
+    │   │   │   ├── cp1257.map
+    │   │   │   ├── cp1258.map
+    │   │   │   ├── cp874.map
+    │   │   │   ├── iso-8859-1.map
+    │   │   │   ├── iso-8859-11.map
+    │   │   │   ├── iso-8859-15.map
+    │   │   │   ├── iso-8859-16.map
+    │   │   │   ├── iso-8859-2.map
+    │   │   │   ├── iso-8859-4.map
+    │   │   │   ├── iso-8859-5.map
+    │   │   │   ├── iso-8859-7.map
+    │   │   │   ├── iso-8859-9.map
+    │   │   │   ├── koi8-r.map
+    │   │   │   └── koi8-u.map
+    │   │   └── src
+    │   │       └── FontLib
+    │   │           ├── AdobeFontMetrics.php
+    │   │           ├── BinaryStream.php
+    │   │           ├── EOT
+    │   │           │   ├── File.php
+    │   │           │   └── Header.php
+    │   │           ├── EncodingMap.php
+    │   │           ├── Exception
+    │   │           │   └── FontNotFoundException.php
+    │   │           ├── Font.php
+    │   │           ├── Glyph
+    │   │           │   ├── Outline.php
+    │   │           │   ├── OutlineComponent.php
+    │   │           │   ├── OutlineComposite.php
+    │   │           │   └── OutlineSimple.php
+    │   │           ├── Header.php
+    │   │           ├── OpenType
+    │   │           │   ├── File.php
+    │   │           │   └── TableDirectoryEntry.php
+    │   │           ├── Table
+    │   │           │   ├── DirectoryEntry.php
+    │   │           │   ├── Table.php
+    │   │           │   └── Type
+    │   │           │       ├── cmap.php
+    │   │           │       ├── cvt.php
+    │   │           │       ├── fpgm.php
+    │   │           │       ├── glyf.php
+    │   │           │       ├── head.php
+    │   │           │       ├── hhea.php
+    │   │           │       ├── hmtx.php
+    │   │           │       ├── kern.php
+    │   │           │       ├── loca.php
+    │   │           │       ├── maxp.php
+    │   │           │       ├── name.php
+    │   │           │       ├── nameRecord.php
+    │   │           │       ├── os2.php
+    │   │           │       ├── post.php
+    │   │           │       └── prep.php
+    │   │           ├── TrueType
+    │   │           │   ├── Collection.php
+    │   │           │   ├── File.php
+    │   │           │   ├── Header.php
+    │   │           │   └── TableDirectoryEntry.php
+    │   │           └── WOFF
+    │   │               ├── File.php
+    │   │               ├── Header.php
+    │   │               └── TableDirectoryEntry.php
+    │   └── php-svg-lib
+    │       ├── AUTHORS.md
+    │       ├── LICENSE
+    │       ├── README.md
+    │       ├── composer.json
+    │       └── src
+    │           └── Svg
+    │               ├── CssLength.php
+    │               ├── DefaultStyle.php
+    │               ├── Document.php
+    │               ├── Gradient
+    │               │   └── Stop.php
+    │               ├── Style.php
+    │               ├── Surface
+    │               │   ├── CPdf.php
+    │               │   ├── SurfaceCpdf.php
+    │               │   ├── SurfaceInterface.php
+    │               │   └── SurfacePDFLib.php
+    │               └── Tag
+    │                   ├── AbstractTag.php
+    │                   ├── Anchor.php
+    │                   ├── Circle.php
+    │                   ├── ClipPath.php
+    │                   ├── Ellipse.php
+    │                   ├── Group.php
+    │                   ├── Image.php
+    │                   ├── Line.php
+    │                   ├── LinearGradient.php
+    │                   ├── Path.php
+    │                   ├── Polygon.php
+    │                   ├── Polyline.php
+    │                   ├── RadialGradient.php
+    │                   ├── Rect.php
+    │                   ├── Shape.php
+    │                   ├── Stop.php
+    │                   ├── StyleTag.php
+    │                   ├── Symbol.php
+    │                   ├── Text.php
+    │                   └── UseTag.php
+    ├── masterminds
+    │   └── html5
+    │       ├── CREDITS
+    │       ├── LICENSE.txt
+    │       ├── README.md
+    │       ├── RELEASE.md
+    │       ├── UPGRADING.md
+    │       ├── bin
+    │       │   └── entities.php
+    │       ├── composer.json
+    │       └── src
+    │           ├── HTML5
+    │           │   ├── Elements.php
+    │           │   ├── Entities.php
+    │           │   ├── Exception.php
+    │           │   ├── InstructionProcessor.php
+    │           │   ├── Parser
+    │           │   │   ├── CharacterReference.php
+    │           │   │   ├── DOMTreeBuilder.php
+    │           │   │   ├── EventHandler.php
+    │           │   │   ├── FileInputStream.php
+    │           │   │   ├── InputStream.php
+    │           │   │   ├── ParseError.php
+    │           │   │   ├── README.md
+    │           │   │   ├── Scanner.php
+    │           │   │   ├── StringInputStream.php
+    │           │   │   ├── Tokenizer.php
+    │           │   │   ├── TreeBuildingRules.php
+    │           │   │   └── UTF8Utils.php
+    │           │   └── Serializer
+    │           │       ├── HTML5Entities.php
+    │           │       ├── OutputRules.php
+    │           │       ├── README.md
+    │           │       ├── RulesInterface.php
+    │           │       └── Traverser.php
+    │           └── HTML5.php
+    ├── sabberworm
+    │   └── php-css-parser
+    │       ├── CHANGELOG.md
+    │       ├── LICENSE
+    │       ├── README.md
+    │       ├── composer.json
+    │       └── src
+    │           ├── CSSElement.php
+    │           ├── CSSList
+    │           │   ├── AtRuleBlockList.php
+    │           │   ├── CSSBlockList.php
+    │           │   ├── CSSList.php
+    │           │   ├── CSSListItem.php
+    │           │   ├── Document.php
+    │           │   └── KeyFrame.php
+    │           ├── Comment
+    │           │   ├── Comment.php
+    │           │   ├── CommentContainer.php
+    │           │   └── Commentable.php
+    │           ├── OutputFormat.php
+    │           ├── OutputFormatter.php
+    │           ├── Parser.php
+    │           ├── Parsing
+    │           │   ├── Anchor.php
+    │           │   ├── OutputException.php
+    │           │   ├── ParserState.php
+    │           │   ├── SourceException.php
+    │           │   ├── UnexpectedEOFException.php
+    │           │   └── UnexpectedTokenException.php
+    │           ├── Position
+    │           │   ├── Position.php
+    │           │   └── Positionable.php
+    │           ├── Property
+    │           │   ├── AtRule.php
+    │           │   ├── CSSNamespace.php
+    │           │   ├── Charset.php
+    │           │   ├── Declaration.php
+    │           │   ├── Import.php
+    │           │   ├── KeyframeSelector.php
+    │           │   ├── Selector
+    │           │   │   ├── Combinator.php
+    │           │   │   ├── Component.php
+    │           │   │   ├── CompoundSelector.php
+    │           │   │   └── SpecificityCalculator.php
+    │           │   └── Selector.php
+    │           ├── Renderable.php
+    │           ├── Rule
+    │           │   └── Rule.php
+    │           ├── RuleSet
+    │           │   ├── AtRuleSet.php
+    │           │   ├── DeclarationBlock.php
+    │           │   ├── DeclarationList.php
+    │           │   ├── LegacyDeclarationListMethods.php
+    │           │   ├── RuleContainer.php
+    │           │   └── RuleSet.php
+    │           ├── Settings.php
+    │           ├── ShortClassNameProvider.php
+    │           └── Value
+    │               ├── CSSFunction.php
+    │               ├── CSSString.php
+    │               ├── CalcFunction.php
+    │               ├── CalcRuleValueList.php
+    │               ├── Color.php
+    │               ├── LineName.php
+    │               ├── PrimitiveValue.php
+    │               ├── RuleValueList.php
+    │               ├── Size.php
+    │               ├── URL.php
+    │               ├── Value.php
+    │               └── ValueList.php
+    └── thecodingmachine
+        └── safe
+            ├── LICENSE
+            ├── README.md
+            ├── composer.json
+            ├── generated
+            │   ├── 8.1
+            │   │   ├── apache.php
+            │   │   ├── apcu.php
+            │   │   ├── array.php
+            │   │   ├── bzip2.php
+            │   │   ├── calendar.php
+            │   │   ├── classobj.php
+            │   │   ├── com.php
+            │   │   ├── cubrid.php
+            │   │   ├── curl.php
+            │   │   ├── datetime.php
+            │   │   ├── dir.php
+            │   │   ├── eio.php
+            │   │   ├── errorfunc.php
+            │   │   ├── exec.php
+            │   │   ├── fileinfo.php
+            │   │   ├── filesystem.php
+            │   │   ├── filter.php
+            │   │   ├── fpm.php
+            │   │   ├── ftp.php
+            │   │   ├── funchand.php
+            │   │   ├── functionsList.php
+            │   │   ├── gettext.php
+            │   │   ├── gmp.php
+            │   │   ├── gnupg.php
+            │   │   ├── hash.php
+            │   │   ├── ibase.php
+            │   │   ├── ibmDb2.php
+            │   │   ├── iconv.php
+            │   │   ├── image.php
+            │   │   ├── imap.php
+            │   │   ├── info.php
+            │   │   ├── inotify.php
+            │   │   ├── json.php
+            │   │   ├── ldap.php
+            │   │   ├── libxml.php
+            │   │   ├── lzf.php
+            │   │   ├── mailparse.php
+            │   │   ├── mbstring.php
+            │   │   ├── misc.php
+            │   │   ├── mysql.php
+            │   │   ├── mysqli.php
+            │   │   ├── network.php
+            │   │   ├── oci8.php
+            │   │   ├── opcache.php
+            │   │   ├── openssl.php
+            │   │   ├── outcontrol.php
+            │   │   ├── pcntl.php
+            │   │   ├── pcre.php
+            │   │   ├── pgsql.php
+            │   │   ├── posix.php
+            │   │   ├── ps.php
+            │   │   ├── pspell.php
+            │   │   ├── readline.php
+            │   │   ├── rector-migrate.php
+            │   │   ├── rpminfo.php
+            │   │   ├── rrd.php
+            │   │   ├── sem.php
+            │   │   ├── session.php
+            │   │   ├── shmop.php
+            │   │   ├── sockets.php
+            │   │   ├── sodium.php
+            │   │   ├── solr.php
+            │   │   ├── spl.php
+            │   │   ├── sqlsrv.php
+            │   │   ├── ssdeep.php
+            │   │   ├── ssh2.php
+            │   │   ├── stream.php
+            │   │   ├── strings.php
+            │   │   ├── swoole.php
+            │   │   ├── uodbc.php
+            │   │   ├── uopz.php
+            │   │   ├── url.php
+            │   │   ├── var.php
+            │   │   ├── xdiff.php
+            │   │   ├── xml.php
+            │   │   ├── xmlrpc.php
+            │   │   ├── yaml.php
+            │   │   ├── yaz.php
+            │   │   ├── zip.php
+            │   │   └── zlib.php
+            │   ├── 8.2
+            │   │   ├── array.php
+            │   │   ├── curl.php
+            │   │   ├── datetime.php
+            │   │   ├── errorfunc.php
+            │   │   ├── exec.php
+            │   │   ├── filesystem.php
+            │   │   ├── fpm.php
+            │   │   ├── functionsList.php
+            │   │   ├── gmp.php
+            │   │   ├── gnupg.php
+            │   │   ├── hash.php
+            │   │   ├── image.php
+            │   │   ├── imap.php
+            │   │   ├── ldap.php
+            │   │   ├── misc.php
+            │   │   ├── mysqli.php
+            │   │   ├── network.php
+            │   │   ├── oci8.php
+            │   │   ├── openssl.php
+            │   │   ├── rector-migrate.php
+            │   │   ├── rnp.php
+            │   │   ├── sodium.php
+            │   │   ├── ssh2.php
+            │   │   └── stream.php
+            │   ├── 8.3
+            │   │   └── rector-migrate.php
+            │   ├── 8.4
+            │   │   ├── apache.php
+            │   │   ├── array.php
+            │   │   ├── curl.php
+            │   │   ├── datetime.php
+            │   │   ├── ftp.php
+            │   │   ├── functionsList.php
+            │   │   ├── gettext.php
+            │   │   ├── ibmDb2.php
+            │   │   ├── image.php
+            │   │   ├── imap.php
+            │   │   ├── info.php
+            │   │   ├── inotify.php
+            │   │   ├── ldap.php
+            │   │   ├── mbstring.php
+            │   │   ├── misc.php
+            │   │   ├── network.php
+            │   │   ├── openssl.php
+            │   │   ├── outcontrol.php
+            │   │   ├── pgsql.php
+            │   │   ├── posix.php
+            │   │   ├── pspell.php
+            │   │   ├── readline.php
+            │   │   ├── rector-migrate.php
+            │   │   ├── sockets.php
+            │   │   ├── sodium.php
+            │   │   ├── stream.php
+            │   │   ├── uodbc.php
+            │   │   ├── xml.php
+            │   │   └── zlib.php
+            │   ├── 8.5
+            │   │   ├── functionsList.php
+            │   │   ├── pcntl.php
+            │   │   ├── rector-migrate.php
+            │   │   ├── rpminfo.php
+            │   │   ├── shmop.php
+            │   │   ├── uodbc.php
+            │   │   ├── xdiff.php
+            │   │   └── zlib.php
+            │   ├── 8.6
+            │   │   ├── functionsList.php
+            │   │   ├── ldap.php
+            │   │   ├── openssl.php
+            │   │   ├── pcntl.php
+            │   │   ├── rector-migrate.php
+            │   │   ├── yaml.php
+            │   │   └── zlib.php
+            │   ├── Exceptions
+            │   │   ├── ApacheException.php
+            │   │   ├── ApcuException.php
+            │   │   ├── ArrayException.php
+            │   │   ├── Bzip2Exception.php
+            │   │   ├── CalendarException.php
+            │   │   ├── ClassobjException.php
+            │   │   ├── ComException.php
+            │   │   ├── CubridException.php
+            │   │   ├── DatetimeException.php
+            │   │   ├── DirException.php
+            │   │   ├── EioException.php
+            │   │   ├── ErrorfuncException.php
+            │   │   ├── ExecException.php
+            │   │   ├── FileinfoException.php
+            │   │   ├── FilesystemException.php
+            │   │   ├── FilterException.php
+            │   │   ├── FpmException.php
+            │   │   ├── FtpException.php
+            │   │   ├── FunchandException.php
+            │   │   ├── GettextException.php
+            │   │   ├── GmpException.php
+            │   │   ├── GnupgException.php
+            │   │   ├── HashException.php
+            │   │   ├── IbaseException.php
+            │   │   ├── IbmDb2Exception.php
+            │   │   ├── IconvException.php
+            │   │   ├── ImageException.php
+            │   │   ├── ImapException.php
+            │   │   ├── InfoException.php
+            │   │   ├── InotifyException.php
+            │   │   ├── LdapException.php
+            │   │   ├── LibxmlException.php
+            │   │   ├── LzfException.php
+            │   │   ├── MailparseException.php
+            │   │   ├── MbstringException.php
+            │   │   ├── MiscException.php
+            │   │   ├── MysqlException.php
+            │   │   ├── MysqliException.php
+            │   │   ├── NetworkException.php
+            │   │   ├── Oci8Exception.php
+            │   │   ├── OpcacheException.php
+            │   │   ├── OutcontrolException.php
+            │   │   ├── PcntlException.php
+            │   │   ├── PgsqlException.php
+            │   │   ├── PosixException.php
+            │   │   ├── PsException.php
+            │   │   ├── PspellException.php
+            │   │   ├── ReadlineException.php
+            │   │   ├── RnpException.php
+            │   │   ├── RpminfoException.php
+            │   │   ├── RrdException.php
+            │   │   ├── SemException.php
+            │   │   ├── SessionException.php
+            │   │   ├── ShmopException.php
+            │   │   ├── SocketsException.php
+            │   │   ├── SodiumException.php
+            │   │   ├── SolrException.php
+            │   │   ├── SplException.php
+            │   │   ├── SqlsrvException.php
+            │   │   ├── SsdeepException.php
+            │   │   ├── Ssh2Exception.php
+            │   │   ├── StreamException.php
+            │   │   ├── StringsException.php
+            │   │   ├── SwooleException.php
+            │   │   ├── UodbcException.php
+            │   │   ├── UopzException.php
+            │   │   ├── UrlException.php
+            │   │   ├── VarException.php
+            │   │   ├── XdiffException.php
+            │   │   ├── XmlException.php
+            │   │   ├── XmlrpcException.php
+            │   │   ├── YamlException.php
+            │   │   ├── YazException.php
+            │   │   ├── ZipException.php
+            │   │   └── ZlibException.php
+            │   ├── apache.php
+            │   ├── apcu.php
+            │   ├── array.php
+            │   ├── bzip2.php
+            │   ├── calendar.php
+            │   ├── classobj.php
+            │   ├── com.php
+            │   ├── cubrid.php
+            │   ├── curl.php
+            │   ├── datetime.php
+            │   ├── dir.php
+            │   ├── eio.php
+            │   ├── errorfunc.php
+            │   ├── exec.php
+            │   ├── fileinfo.php
+            │   ├── filesystem.php
+            │   ├── filter.php
+            │   ├── fpm.php
+            │   ├── ftp.php
+            │   ├── funchand.php
+            │   ├── functionsList.php
+            │   ├── gettext.php
+            │   ├── gmp.php
+            │   ├── gnupg.php
+            │   ├── hash.php
+            │   ├── ibase.php
+            │   ├── ibmDb2.php
+            │   ├── iconv.php
+            │   ├── image.php
+            │   ├── imap.php
+            │   ├── info.php
+            │   ├── inotify.php
+            │   ├── json.php
+            │   ├── ldap.php
+            │   ├── libxml.php
+            │   ├── lzf.php
+            │   ├── mailparse.php
+            │   ├── mbstring.php
+            │   ├── misc.php
+            │   ├── mysql.php
+            │   ├── mysqli.php
+            │   ├── network.php
+            │   ├── oci8.php
+            │   ├── opcache.php
+            │   ├── openssl.php
+            │   ├── outcontrol.php
+            │   ├── pcntl.php
+            │   ├── pcre.php
+            │   ├── pgsql.php
+            │   ├── posix.php
+            │   ├── ps.php
+            │   ├── pspell.php
+            │   ├── readline.php
+            │   ├── rnp.php
+            │   ├── rpminfo.php
+            │   ├── rrd.php
+            │   ├── sem.php
+            │   ├── session.php
+            │   ├── shmop.php
+            │   ├── sockets.php
+            │   ├── sodium.php
+            │   ├── solr.php
+            │   ├── spl.php
+            │   ├── sqlsrv.php
+            │   ├── ssdeep.php
+            │   ├── ssh2.php
+            │   ├── stream.php
+            │   ├── strings.php
+            │   ├── swoole.php
+            │   ├── uodbc.php
+            │   ├── uopz.php
+            │   ├── url.php
+            │   ├── var.php
+            │   ├── xdiff.php
+            │   ├── xml.php
+            │   ├── xmlrpc.php
+            │   ├── yaml.php
+            │   ├── yaz.php
+            │   ├── zip.php
+            │   └── zlib.php
+            ├── lib
+            │   ├── DateTime.php
+            │   ├── DateTimeImmutable.php
+            │   ├── Exceptions
+            │   │   ├── CurlException.php
+            │   │   ├── JsonException.php
+            │   │   ├── OpensslException.php
+            │   │   ├── PcreException.php
+            │   │   ├── SafeExceptionInterface.php
+            │   │   └── SimplexmlException.php
+            │   └── special_cases.php
+            └── rector-migrate.php
+
+77 directories, 661 files
